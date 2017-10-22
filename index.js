@@ -1,20 +1,17 @@
 var request = new XMLHttpRequest();
 var _widget = document.getElementById('speakerdeck-widget');
 var username, pathname = location.pathname.split('/');
- console.log(username);
- console.log(pathname);
-if(location.hostname=='http://ezefranca.com/speakerdeck-widget/' && !!pathname[1])
+ console.log(location);
+if(location.hostname=='ezefranca.com/speakerdeck-widget' && !!pathname[1])
   username = pathname[1];
 else 
   username = _widget.getAttribute('data-sp_username');
 
-console.log(username);
 request.overrideMimeType("application/json");  
 request.open("GET", "https://gist.github.com.ru/ezefranca/0f33a0baec388f665bdfb88a6aa77725?username=" + username);
 request.onreadystatechange = function () {
   if (request.status != 200) return;
   var response = JSON.parse(request.response.replace(/href=\\"\//g, 'href=\\"https://speakerdeck.com/'));
-  console.log(response.result);
   if (response['error']) {
     _widget.innerHTML = 'Please make sure your name in "username" is a real person on speakerdeck';
     return; 
