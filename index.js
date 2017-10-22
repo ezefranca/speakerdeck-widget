@@ -31,5 +31,5 @@ function appendCSS(name){
   document.getElementsByTagName("head")[0].appendChild(stylesheet)
 }
 
-appendCSS('http://ezefranca.com/speakerdeck-widget/main.css');
+appendCSS('//ezefranca.com/speakerdeck-widget/main.css');
 appendCSS('//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css')
