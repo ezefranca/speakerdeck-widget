@@ -1,12 +1,12 @@
 var request = new XMLHttpRequest();
-var widget = document.getElementById('speakerdeck-widget');
+var _widget = document.getElementById('speakerdeck-widget');
 var username, pathname = location.pathname.split('/');
  console.log(username);
  console.log(pathname);
 if(location.hostname=='http://ezefranca.com/speakerdeck-widget/' && !!pathname[1])
   username = pathname[1];
 else 
-  username = widget.getAttribute('data-sp_username');
+  username = _widget.getAttribute('data-sp_username');
 
 console.log(username);
 request.overrideMimeType("application/json");  
@@ -16,12 +16,12 @@ request.onreadystatechange = function () {
   var response = JSON.parse(request.response.replace(/href=\\"\//g, 'href=\\"https://speakerdeck.com/'));
   console.log(response.result);
   if (response['error']) {
-    widget.innerHTML = 'Please make sure your name in "username" is a real person on speakerdeck';
+    _widget.innerHTML = 'Please make sure your name in "username" is a real person on speakerdeck';
     return; 
   }
   // If you want a more quality version replace the thumbnail and use the  high qualityimagens 
   //  widget.innerHTML = response.result.talks.replace("thumb_slide_0.jpg","slide_1.jpg");
-  widget.innerHTML = response.result.talks;
+  _widget.innerHTML = response.result.talks;
 };
 request.send();
 
