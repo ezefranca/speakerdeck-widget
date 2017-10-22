@@ -2,11 +2,14 @@ var request = new XMLHttpRequest();
 var _widget = document.getElementById('speakerdeck-widget');
 var username, pathname = location.pathname.split('/');
  console.log(location);
-if(location.hostname=='ezefranca.com/speakerdeck-widget' && !!pathname[2])
+if(location.hostname=='ezefranca.com/speakerdeck-widget' && !!pathname[2]) {
   username = pathname[2];
+}
 console.log("custom user");
-else 
+}
+else {
   username = _widget.getAttribute('data-sp_username');
+}
 
 request.overrideMimeType("application/json");  
 request.open("GET", "https://gist.github.com.ru/ezefranca/0f33a0baec388f665bdfb88a6aa77725?username=" + username);
