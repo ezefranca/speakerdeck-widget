@@ -4,7 +4,7 @@
 Github Widget</a></p>
 
 ```html
-	<div id="speakerdeck-widget" data-user="your-speakerdeck-username" data-display="talks"></div>
+	<div id="speakerdeck-widget" sp-username="your-speakerdeck-username" data-display="talks"></div>
 	<script src="http://ezefranca.com/speakerdeck-widget/index.js"></script>
 ```
 <h3>Try it :)</h3>
@@ -12,7 +12,7 @@ Github Widget</a></p>
 ![](screenshot.png)
 
 ## Config
-- username: put your github username in `data-user` attribute
+- username: put your Speaker Deck username in `sp-username` attribute
 - display: for now, use 'talks' (in the the future I planning get other things)
 
 ## Try
