@@ -18,7 +18,7 @@ request.onreadystatechange = function () {
   }
   // If you want a more quality version replace the thumbnail and use the  high qualityimagens 
   //  widget.innerHTML = response.result.talks.replace("thumb_slide_0.jpg","slide_1.jpg");
-  widget.innerHTML = response.result['talks'];
+  widget.innerHTML = response['result']['talks'];
 };
 request.addEventListener("load", transferComplete);
 request.addEventListener("error", transferFailed);
