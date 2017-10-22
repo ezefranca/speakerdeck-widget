@@ -2,8 +2,9 @@ var request = new XMLHttpRequest();
 var _widget = document.getElementById('speakerdeck-widget');
 var username, pathname = location.pathname.split('/');
  console.log(location);
-if(location.hostname=='ezefranca.com/speakerdeck-widget' && !!pathname[1])
-  username = pathname[1];
+if(location.hostname=='ezefranca.com/speakerdeck-widget' && !!pathname[2])
+  username = pathname[2];
+console.log("custom user");
 else 
   username = _widget.getAttribute('data-sp_username');
 
