@@ -8,7 +8,7 @@ Github Widget</a>
 
 ```html
     <div id="speakerdeck-widget" data-sp_username="speakerdeck-username" data-display="talks"></div>
-    <script src="http://ezefranca.com/speakerdeck-widget/index.js"></script>
+    <script src="http://ezefranca.github.io/speakerdeck-widget/index.js"></script>
 ```
 <h3>Try it :)</h3>
 
@@ -19,10 +19,10 @@ Github Widget</a>
 - display: for now, use `talks`
 
 ## Try
-<p>Go to <b>https://ezefranca.com/speakerdeck-widget/your-speaker-deck-username</b> and see how your widget looks</p>
+<p>Go to <b>http://ezefranca.github.io/speakerdeck-widget/your-speaker-deck-username</b> and see how your widget looks</p>
 
 ## Live Example
-- http://ezefranca.com/widget.html
+- http://ezefranca.github.io/widget.html
 
 ## How this works
 The same way of <a href="https://github.com/jcouyang/gh-widget">gh-widget</a> works. A simple hosted gist get the data from speakerdeck site, and index.js parse and build the widget.
