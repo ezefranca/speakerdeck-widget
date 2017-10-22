@@ -1,8 +1,9 @@
-
+<p align="center"> 
 <img src="https://raw.githubusercontent.com/ezefranca/speakerdeck-widget/master/logo-sp.png"/>
 <p> A very simple Speaker Deck Widget to show yours last talks. Just two html lines. Based on <a href="https://github.com/jcouyang/">@jcouyang</a>, <a href="https://github.com/jcouyang/gh-widget">
 Github Widget</a>
 
+</p>
 </p>
 
 ```html
