@@ -10,7 +10,9 @@ request.overrideMimeType("application/json");
 request.open("GET", "https://gist.github.com.ru/ezefranca/0f33a0baec388f665bdfb88a6aa77725?username=" + username);
 request.onreadystatechange = function () {
   if (request.status != 200) return;
-  var response = request.response;//.replace(/href=\\"\//g, 'href=\\"https://speakerdeck.com/'));
+  var _response = request.response;//.replace(/href=\\"\//g, 'href=\\"https://speakerdeck.com/'));
+  var response = JSON.parse(_response);
+  console.log(response);
   if (response.error) {
     widget.innerHTML = 'Please make sure your name in "data-user" is a real person on speakerdeck';
     return; 
