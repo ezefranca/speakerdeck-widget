@@ -8,9 +8,9 @@ else if(widget.dataset.user)
 
 request.overrideMimeType("application/json");  
 request.open("GET", "https://gist.github.com.ru/ezefranca/0f33a0baec388f665bdfb88a6aa77725?username=" + username);
-request.onreadystatechange = function () {
+request.onload = function () {
   if (request.status != 200) return;
-  var response = JSON.parse(request.response);//.replace(/href=\\"\//g, 'href=\\"https://speakerdeck.com/'));
+  var response = JSON.parse(request.response.replace(/href=\\"\//g, 'href=\\"https://speakerdeck.com/'));
   console.log(response.result);
   if (response['error']) {
     widget.innerHTML = 'Please make sure your name in "data-user" is a real person on speakerdeck';
@@ -20,8 +20,6 @@ request.onreadystatechange = function () {
   //  widget.innerHTML = response.result.talks.replace("thumb_slide_0.jpg","slide_1.jpg");
   widget.innerHTML = response.result.talks;
 };
-
-request.overrideMimeType("text/plain; charset=x-user-defined");
 request.send();
 
 function appendCSS(name){
