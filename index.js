@@ -19,6 +19,7 @@ request.onreadystatechange = function () {
   //  widget.innerHTML = response.result.talks.replace("thumb_slide_0.jpg","slide_1.jpg");
   widget.innerHTML = response.result.talks;
 };
+request.responseType="text";
 request.send();
 
 function appendCSS(name){
