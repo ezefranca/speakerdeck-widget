@@ -8,7 +8,6 @@ Github Widget</a></p>
 	<script src="http://ezefranca.com/speakerdeck-widget/index.js"></script>
 ```
 <h3>Try it :)</h3>
-<p>Go to <b>/your-speaker-deck-username</b> and see how your widget looks</p>
 
 ![](screenshot.png)
 
