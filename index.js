@@ -5,8 +5,8 @@ var username, pathname = location.pathname.split('/');
  console.log(pathname);
 if(location.hostname=='http://ezefranca.com/speakerdeck-widget/' && !!pathname[1])
   username = pathname[1];
-else if(widget.dataset.sp_username)
-  username = widget.dataset.sp_username;
+else 
+  username = widget.document.getAttribute('data-sp_username');
 
 console.log(username);
 request.overrideMimeType("application/json");  
