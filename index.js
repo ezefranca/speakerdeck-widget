@@ -21,8 +21,35 @@ request.onreadystatechange = function () {
   //  widget.innerHTML = response.result.talks.replace("thumb_slide_0.jpg","slide_1.jpg");
   widget.innerHTML = response.result.talks;
 };
-request.responseType="text";
+request.addEventListener("progress", updateProgress);
+request.addEventListener("load", transferComplete);
+request.addEventListener("error", transferFailed);
+request.addEventListener("abort", transferCanceled);
+request.overrideMimeType("text/plain; charset=x-user-defined");
 request.send();
+
+
+function updateProgress (oEvent) {
+  if (oEvent.lengthComputable) {
+    var percentComplete = oEvent.loaded / oEvent.total;
+    console.log(percentComplete);
+  } else {
+    // Unable to compute progress information since the total size is unknown
+  }
+}
+
+function transferComplete(evt) {
+  console.log("The transfer is complete.");
+}
+
+function transferFailed(evt) {
+  console.log("An error occurred while transferring the file.");
+}
+
+function transferCanceled(evt) {
+  console.log("The transfer has been canceled by the user.");
+}
+
 
 function appendCSS(name){
   var stylesheet = document.createElement("link")
