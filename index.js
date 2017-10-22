@@ -4,7 +4,6 @@ var username, pathname = location.pathname.split('/');
  console.log(location);
 if(location.hostname=='ezefranca.com/speakerdeck-widget' && !!pathname[2]) {
   username = pathname[2];
-}
 console.log("custom user");
 }
 else {
