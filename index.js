@@ -11,33 +11,18 @@ request.open("GET", "https://gist.github.com.ru/ezefranca/0f33a0baec388f665bdfb8
 request.onreadystatechange = function () {
   if (request.status != 200) return;
   var response = request.response;//.replace(/href=\\"\//g, 'href=\\"https://speakerdeck.com/'));
-  console.log(response['result']);
+  console.log(response);
   if (response['error']) {
     widget.innerHTML = 'Please make sure your name in "data-user" is a real person on speakerdeck';
     return; 
   }
   // If you want a more quality version replace the thumbnail and use the  high qualityimagens 
   //  widget.innerHTML = response.result.talks.replace("thumb_slide_0.jpg","slide_1.jpg");
-  widget.innerHTML = response['result'];
+  widget.innerHTML = response;
 };
-request.addEventListener("load", transferComplete);
-request.addEventListener("error", transferFailed);
-request.addEventListener("abort", transferCanceled);
+
 request.overrideMimeType("text/plain; charset=x-user-defined");
 request.send();
-
-function transferComplete(evt) {
-  console.log("The transfer is complete.");
-}
-
-function transferFailed(evt) {
-  console.log("An error occurred while transferring the file.");
-}
-
-function transferCanceled(evt) {
-  console.log("The transfer has been canceled by the user.");
-}
-
 
 function appendCSS(name){
   var stylesheet = document.createElement("link")
